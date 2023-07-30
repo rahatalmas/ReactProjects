@@ -7,11 +7,6 @@ const Home = () =>{
     const summary =books[0].summary ;
     const image = books[0].img;
     const price = books[0].price;
-    useEffect(
-      ()=>{
-        console.log(books);
-      },[]
-    );
     return(
         <>
           <section className="product-display-section">
@@ -22,31 +17,31 @@ const Home = () =>{
                price={price}
             />
             <ProductCard 
-               title={title}
+               title="It Ends With Us"
                summary={summary}
                image={image}
                price={price}
             />
-                        <ProductCard 
-               title={title}
+            <ProductCard 
+               title="Things You See ..."
                summary={summary}
                image={image}
                price={price}
             />
-                        <ProductCard 
-               title={title}
+            <ProductCard 
+               title="Atomic Habits"
                summary={summary}
                image={image}
                price={price}
             />
-                        <ProductCard 
-               title={title}
+            <ProductCard 
+               title="Psychology of Money"
                summary={summary}
                image={image}
                price={price}
             />
-                        <ProductCard 
-               title={title}
+            <ProductCard 
+               title="Dopamine Detox"
                summary={summary}
                image={image}
                price={price}

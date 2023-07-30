@@ -16,8 +16,8 @@ export const BookContextProvider = ({children}) =>{
         {
             img:"",
             title:"It Starts With Us",
-            summary:"It Starts With Us is told from...",
-            price:100
+            price:100,
+            quantity:1
         }
     ]);
     return(

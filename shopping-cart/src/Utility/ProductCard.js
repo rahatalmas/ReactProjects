@@ -5,16 +5,18 @@ const ProductCard = ({title,summary,image,price}) =>{
     
     const {cartItems,setCartItems} = useContext(GlobalStateProvider);
     
-    const item = {
+    const newitem = {
+        img:"",
         title:"It Ends With Us",
         price:"100 tk",
         quantity : 0
     }
     
-    const AddToCart = (item)=>{
-        console.log(item)
-        setCartItems([...cartItems,item])
-        console.log(cartItems)
+    const AddToCart = (newitem)=>{
+        //console.log(item)
+        const exist = cartItems.find((item)=>item.title === newitem.title);
+        exist?exist.quantity++:newitem.quantity=1;
+        setCartItems(exist?[...cartItems]:[...cartItems,newitem]);
     }
 
 
@@ -26,7 +28,7 @@ const ProductCard = ({title,summary,image,price}) =>{
                   <h3>{title}</h3>
                   <p>{summary}</p>
                   <p>Price: {price} tk</p>
-                  <button onClick={()=>{AddToCart(item)}}>Add</button>
+                  <button onClick={()=>{AddToCart({image,title,price})}}>Add</button>
                </div>
             </div>
         </>
